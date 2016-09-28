@@ -117,7 +117,7 @@ function islandora_paged_content_aggregate_pdf_derivative(AbstractObject $object
       $object,
       array_keys(islandora_paged_content_get_pages($object)),
       array(
-        '-density' => '96',
+        '-density' => '72',
         '-compress' => 'LZW',
       )
     );
