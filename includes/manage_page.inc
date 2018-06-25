@@ -232,6 +232,7 @@ function islandora_paged_content_manage_page_pdf_form_submit(array $form, array 
   $options = array(
     '-density' => $form_state['values']['dpi'],
     '-compress' => 'LZW',
+    '-resize' => '1200x1600',
   );
   if (islandora_paged_content_page_derive_pdf_datastream($object, $options)) {
     drupal_set_message(t('Successfully created PDF.'), 'status');

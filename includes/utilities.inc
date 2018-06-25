@@ -554,7 +554,7 @@ function islandora_paged_content_ocr_combine(array $files, $out) {
  * @return bool
  *   TRUE if successful, FALSE otherwise.
  */
-function islandora_paged_content_page_derive_pdf_datastream(AbstractObject $object, array $options = array('-compress' => 'LZW')) {
+function islandora_paged_content_page_derive_pdf_datastream(AbstractObject $object, array $options = array('-compress' => 'LZW', '-resize' => '1200x1600')) {
   $pdf_file = islandora_paged_content_page_derive_pdf($object, $options);
   if (!$pdf_file) {
     return FALSE;
@@ -575,7 +575,7 @@ function islandora_paged_content_page_derive_pdf_datastream(AbstractObject $obje
  * @return string
  *   The absolute path to the derived file if successful, FALSE otherwise.
  */
-function islandora_paged_content_page_derive_pdf(AbstractObject $object, array $options = array('-compress' => 'LZW')) {
+function islandora_paged_content_page_derive_pdf(AbstractObject $object, array $options = array('-compress' => 'LZW', '-resize' => '1200x1600')) {
   if (!islandora_paged_content_can_derive($object, 'PDF')) {
     return FALSE;
   }

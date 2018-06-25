@@ -143,6 +143,7 @@ function islandora_paged_content_manage_pages_pdf_form_submit(array $form, array
   $options = array(
     '-density' => $form_state['values']['dpi'],
     '-compress' => 'LZW',
+    '-resize' => '1200x1600',
   );
   $batch = islandora_paged_content_create_pdf_batch($object, $pages, $options);
   batch_set($batch);
