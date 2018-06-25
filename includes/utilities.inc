@@ -116,9 +116,15 @@ EOQ;
 function islandora_paged_content_get_pages_solr(AbstractObject $object) {
   $pages = array();
   $qp = new islandoraSolrQueryProcessor();
+<<<<<<< HEAD
   $qp->buildQuery(format_string('!field:("!pid" OR "info:fedora/!pid")', array(
     '!field' => variable_get('islandora_solr_member_of_field', 'RELS_EXT_isMemberOf_uri_ms'),
     '!pid' => $object->id,
+=======
+  $qp->buildQuery(format_string('@field:"@pid"', array(
+    '@field' => variable_get('islandora_solr_member_of_field', 'RELS_EXT_isMemberOf_uri_ms'),
+    '@pid' => "info:fedora/{$object->id}",
+>>>>>>> 86fd767c19eca7b330eb8e1eeee58033011c5e8d
   )
   ));
   if (variable_get('islandora_paged_content_hide_pages_solr', FALSE)) {
